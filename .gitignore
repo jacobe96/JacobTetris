@@ -1,0 +1,43 @@
+ int a = 50;
+ int n = 160;
+
+Block [] blockes = new Block[n]; 
+ 
+void setup() { 
+  size(1000, 800); 
+
+  int x = 250;  
+  int y = 0;  
+  int b = 0;
+ 
+  for (int c = 0; c < 10; c += 1) { 
+    for (int d = 0; d < 16; d += 1) { 
+ 
+      blockes[b] = new Block(x+c*a, y+d*a);
+      b++;
+    }
+  }
+}
+ 
+void draw() { 
+  background(255);
+ 
+  for (int c = 0; c < n; c++) { 
+
+    blockes[c].grid();
+    print (c);
+    print ("  ");
+  } 
+} 
+
+class Block {
+ 
+  float x;
+  float y;  
+  
+  Block ( float x, float y) {
+    this.x=x;
+    this.y=y;
+   
+  }  
+ 
